@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>散点图</title>
+</head>
+<script src="../static/js/echarts.common.js"></script>
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<body>
+<div id="main" style="height: 400px;width: 600px;"></div>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById("main"))
+    var option = {
+        title: {
+            text: '折线图',
+            textStyle: {
+                color: 'red',
+                fontStyle: 'italic',
+                fontSize: 21.3,
+                fontWeight: 'bold'
+            },
+            subtext: '平滑'
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            data: ['房源']
+        },
+        xAxis: {
+            name: '名称',
+            // data: ['江宁', '栖霞', '玄武', '秦淮'],
+            axisLine: {
+                show: true,
+                symbol: ['none', 'arrow'],
+                symbolSize: [8, 8],
+            }
+        },
+        yAxis: {
+            name: '数据',
+            xisLine: {
+                show: true,
+                symbol: ['none', 'arrow'],
+                symbolSize: [8, 8],
+            }
+        },
+        series: [
+            {
+                name: '房源',
+                smooth: true,
+                type: 'scatter',
+                // stack: '尝试',
+                data: [
+                    [10.0, 8.04],
+                    [8.07, 6.95],
+                    [13.0, 7.58],
+                    [9.05, 8.81],
+                    [11.0, 8.33],
+                    [14.0, 7.66],
+                    [13.4, 6.81],
+                    [10.0, 6.33],
+                    [14.0, 8.96],
+                    [12.5, 6.82],
+                    [9.15, 7.20],
+                    [11.5, 7.20],
+                    [3.03, 4.23],
+                    [12.2, 7.83],
+                    [2.02, 4.47],
+                    [1.05, 3.33],
+                    [4.05, 4.96],
+                    [6.03, 7.24],
+                    [12.0, 6.26],
+                    [12.0, 8.84],
+                    [7.08, 5.82],
+                    [5.02, 5.68]
+                ]
+            },
+
+        ]
+    }
+    myChart.setOption(option)
+</script>
+
+
+</body>
+</html>

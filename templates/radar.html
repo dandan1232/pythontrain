@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雷达图</title>
+</head>
+<script src="../static/js/echarts.common.js"></script>
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<body>
+<div id="main" style="height: 400px;height: 600px"></div>
+<script type="text/javascript">
+var myChart = echarts.init(document.getElementById("main"))
+    var option = {
+        title: {
+            text: '雷达图',
+            textStyle: {
+                color: 'red',
+                fontStyle: 'italic',
+                fontSize: 21.3,
+                fontWeight: 'bold'
+            },
+            subtext: '平滑'
+        },
+        tooltip: {
+            trigger: 'item',
+        },
+        legend: {
+            data: ['222']
+        },
+        polar:[{
+            indicator:[
+                {name:'阿巴',max:1000},
+                {name:'呵呵',max:4300},
+                {name:'嘿嘿',max:2400},
+                {name:'哈哈',max:1300},
+                {name:'牛啊',max:200},
+            ]
+        }],
+
+        series: [
+            {
+                type: 'radar',
+                // radius:['20%','40%'],
+                // roseType:'radius',
+                // stack: '尝试',
+                data: [
+                    {name: '222',
+                        value:[11,22,33,44,55]},
+                ]
+            },
+
+        ]
+    }
+    myChart.setOption(option)
+</script>
+
+</body>
+</html>

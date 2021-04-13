@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>饼图</title>
+</head>
+<script src="../static/js/echarts.common.js"></script>
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<body>
+<div id="main" style="height: 400px;height: 600px"></div>
+<script type="text/javascript">
+var myChart = echarts.init(document.getElementById("main"))
+    var option = {
+        title: {
+            text: '饼图',
+            textStyle: {
+                color: 'red',
+                fontStyle: 'italic',
+                fontSize: 21.3,
+                fontWeight: 'bold'
+            },
+            subtext: '平滑'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter:'{a}</br>{b}:{c}({d}%)'
+        },
+        legend: {
+            // orient:'',
+        },
+
+        series: [
+            {
+                name: '房源',
+                smooth: true,
+                type: 'pie',
+                radius:['20%','40%'],
+                roseType:'radius',
+                itemStyle:{
+                    normal: {
+                        label: {
+                            show: true,
+                            formatter: '{b} : {c} ({d}%)',
+                        },
+                    }
+                },
+                // stack: '尝试',
+                label:{
+                    show:true
+                },
+                data: [
+                    {name: '林丹丹',value:2000},
+                    {name: '栖霞',value:1200},
+                    {name: '玄武',value:170},
+                    {name: '秦淮',value:1630},
+                    {name: '江宁',value:1920}
+                ]
+            },
+
+        ]
+    }
+    myChart.setOption(option)
+</script>
+
+</body>
+</html>

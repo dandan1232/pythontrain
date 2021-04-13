@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>柱状图</title>
+</head>
+<script src="../static/js/echarts.common.js"></script>
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<body>
+<div id="main" style="height: 400px;width: 600px;"></div>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById("main"))
+    var option = {
+        title: {
+            text: '折线图',
+            textStyle: {
+                color: 'red',
+                fontStyle: 'italic',
+                fontSize: 21.3,
+                fontWeight: 'bold'
+            },
+            subtext: '平滑'
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            data: ['房源1','房源2','房源3']
+        },
+        xAxis: {
+            name: '名称',
+            data: ['江宁', '栖霞', '玄武', '秦淮'],
+            axisLine: {
+                show: true,
+                symbol: ['none', 'arrow'],
+                symbolSize: [8, 8],
+            }
+        },
+        yAxis: {
+            name: '数据',
+            xisLine: {
+                show: true,
+                symbol: ['none', 'arrow'],
+                symbolSize: [8, 8],
+            }
+        },
+        series: [
+            {
+                name: '房源1',
+                smooth: true,
+                type: 'bar',
+                // stack: '尝试',
+                data: ['1200', '300', '888', '200']
+            },
+            {
+                name: '房源2',
+                smooth: true,
+                type: 'bar',
+                // stack: '尝试',
+                data: ['200', '600', '488', '300']
+            },
+            {
+                name: '房源3',
+                smooth: true,
+                type: 'bar',
+                stack: '尝试',
+                data: ['500', '340', '868', '600']
+            }
+        ]
+    }
+    myChart.setOption(option)
+</script>
+
+
+</body>
+</html>
